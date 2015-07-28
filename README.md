@@ -28,7 +28,7 @@ applications:
 - memory: 1GB
   domain: mybluemix.net
   path: .
-  buildpack: https://github.com/bancha001/bluemix-buildpack-meteor
+  buildpack: https://github.com/alexbonti/bluemix-buildpack-meteor
   host: testmeteor
   name: testmeteor
   disk: 512M
