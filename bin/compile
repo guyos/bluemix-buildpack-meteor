@@ -17,7 +17,6 @@ else
   fi
 fi
 
-RELEASE < $APP_DIR"/.meteor/release"
 
 # Create some variables.
 BUILDPACK_DIR=$(cd $(dirname $0); cd ..; pwd)
@@ -28,12 +27,16 @@ COMPILE_DIR=$BUILD_DIR"/.bluemix"
 COMPILE_BIN_DIR=$COMPILE_DIR"/bin" # Link for Node is stored here.
 COMPILE_APP_DIR=$COMPILE_DIR"/app" # Built Meteor application is stored here.
 TEMP_DIR=$(mktemp -d $BUILDPACK_DIR"/temp-XXXX")
+RELEASE= < $APP_DIR/".meteor/release"
+
 
 # Create directories.
 mkdir -p $COMPILE_BIN_DIR $COMPILE_APP_DIR
 
 # Load some convenience functions like status(), echo(), and indent().
 source $BUILDPACK_DIR"/bin/common.sh"
+
+echo $APP_DIR
 
 #
 # Install Node
@@ -52,7 +55,7 @@ export PATH=$PATH:$COMPILE_BIN_DIR
 #
 status "Installing Meteor"
 
-curl -sS https://install.meteor.com/?release=1.3.1.5 | sh
+curl -sS https://install.meteor.com/?release=1.2.1 | sh
 export PATH=$PATH:$HOME"/.meteor"
 echo "Meteor version installed: " $RELEASE
 
