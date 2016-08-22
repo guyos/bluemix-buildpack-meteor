@@ -35,9 +35,9 @@ mkdir -p $COMPILE_BIN_DIR $COMPILE_APP_DIR
 
 # Load some convenience functions like status(), echo(), and indent().
 source $BUILDPACK_DIR"/bin/common.sh"
-
+RELEASE=${RELEASE:7}
 echo "Meteor version to install: "$RELEASE
-echo cat $BUILD_DIR"/.meteor/release"
+
 
 #
 # Install Node
