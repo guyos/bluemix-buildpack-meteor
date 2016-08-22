@@ -36,7 +36,8 @@ mkdir -p $COMPILE_BIN_DIR $COMPILE_APP_DIR
 # Load some convenience functions like status(), echo(), and indent().
 source $BUILDPACK_DIR"/bin/common.sh"
 
-echo "build dir: "$BUILD_DIR
+echo "Meteor version to install: "$RELEASE
+echo $BUILD_DIR"/.meteor/release"
 
 #
 # Install Node
@@ -57,7 +58,6 @@ status "Installing Meteor"
 
 curl -sS https://install.meteor.com/?release=1.2.1 | sh
 export PATH=$PATH:$HOME"/.meteor"
-echo "Meteor version installed: " $RELEASE
 
 #
 # Build Meteor application
