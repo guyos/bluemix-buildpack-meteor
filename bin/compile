@@ -17,6 +17,8 @@ else
   fi
 fi
 
+RELEASE < $APP_DIR"/.meteor/release"
+
 # Create some variables.
 BUILDPACK_DIR=$(cd $(dirname $0); cd ..; pwd)
 BUILD_DIR=$1
